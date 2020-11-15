@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/USER/Desktop/HW3_SP/main.cpp
+minish.h
+/mnt/c/Users/USER/Desktop/HW3_SP/minish.h
+
+/mnt/c/Users/USER/Desktop/HW3_SP/minish.h
+sys/types.h
+-
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+signal.h
+-
+sys/wait.h
+-
+dirent.h
+-
+errno.h
+-
+regex.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+fnmatch.h
+-
+

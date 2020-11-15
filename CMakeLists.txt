@@ -1,0 +1,1 @@
+ADD_EXECUTABLE(minish main.cpp builtincmd.cpp kjob.cpp process_handler.cpp)

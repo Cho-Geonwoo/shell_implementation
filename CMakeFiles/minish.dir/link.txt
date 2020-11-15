@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/minish.dir/main.cpp.o CMakeFiles/minish.dir/builtincmd.cpp.o CMakeFiles/minish.dir/kjob.cpp.o CMakeFiles/minish.dir/process_handler.cpp.o  -o minish 
