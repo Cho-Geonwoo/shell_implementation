@@ -28,8 +28,8 @@ job_list *jl = (job_list*)malloc(sizeof(job_list));
 void sigint_handler(int sig_number){
 	can_wait = 0;
 	if(cur_fg_pid!=-1){
-		kill(cur_fg_pid, SIGKILL);
 		delete_process(jl, cur_fg_pid);
+		kill(cur_fg_pid, SIGKILL);
 	}
 	else{
 		delete_process(jl, cur_fg_pid);

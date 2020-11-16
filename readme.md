@@ -1,6 +1,4 @@
-###### System Programming - Shell Implementation
-
-------------------------------------------------------------------
+# System Programming - Shell Implementation
 
 > ​	*File components: cpp files, make file (with cmake stuffs), executable file minish*
 
@@ -16,7 +14,7 @@
 
   1. Basic execution of commands are implemented.
 
-     <img src = "C:\Users\USER\AppData\Roaming\Typora\typora-user-images\image-20201116005903824.png" width = "60%"> 
+     <img src = "https://raw.githubusercontent.com/Cho-Geonwoo/img/master/shell%201.png" width = "60%"> 
 
      After getting an input from an user, I parsed the commands using strtok function and while loop. (To watch details, please watch parsecmd function on the main.cpp source code.) Then, I used fork-exec method to execute the commands. A child process runs the command and a parent process get wait until the child process gives an exit status. (For details, please watch execute part on the main.cpp source code.)
 
