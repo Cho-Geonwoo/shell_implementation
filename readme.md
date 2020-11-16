@@ -40,8 +40,10 @@ I compiled the files on the WSL environment. After finding HW3_SP file and movin
 
 
 
-5. __Pipe__ is implemented.<img src = "https://raw.githubusercontent.com/Cho-Geonwoo/img/master/shell%205.png" width = "80%">
+5. __Pipe__ is implemented.
 
+   <img src = "https://raw.githubusercontent.com/Cho-Geonwoo/img/master/shell%205.png" width = "80%">
+   
    By using fork, pipe, and dup2 function, it was able to implement pipe. (For details, watch fork_pipes part in the main.cpp source code.)
    
    
