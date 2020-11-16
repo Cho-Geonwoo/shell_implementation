@@ -28,8 +28,8 @@ job_list *jl = (job_list*)malloc(sizeof(job_list));
 void sigint_handler(int sig_number){
 	can_wait = 0;
 	if(cur_fg_pid!=-1){
-		delete_process(jl, cur_fg_pid);
 		kill(cur_fg_pid, SIGKILL);
+		delete_process(jl, cur_fg_pid);
 	}
 	else{
 		delete_process(jl, cur_fg_pid);
@@ -42,7 +42,10 @@ void sigint_handler(int sig_number){
 //SIGCHLD handler for killing background process
 void sigchld_handler(int sig_number){
 	if(int proc_id = wait(&prev_exit_status)){
-		if(search_process(jl, proc_id)){
+		if(proc_id==-1){
+			return;
+		}
+		else if(search_process(jl, proc_id)){
 			if(jl->head->pid == proc_id){
 				jl->head->status = 0;
 				printf("[%d] Done %20s\n", jl->head->jid, jl->head->cmd);
@@ -108,7 +111,9 @@ void execute(char **args, bool bg_check){
 		if(exec_res==-1){
 			perror("ERROR: Command failed\n");
 		}
-		if(!bg_check) exit(exec_res);
+		if(!bg_check){
+			exit(exec_res);
+		}
 	}
 	else{ //parent process
 		//If Background process
@@ -262,12 +267,19 @@ char **parsecmd(char *line){
     			if(wildcard){
     				DIR *dr = opendir(".");
     				struct dirent *de;
+    				int cnt = 0;
     				while((de = readdir(dr))!=NULL){
     					if(!fnmatch(arg, de->d_name,0)){
     						args[pos] = de->d_name;
     						pos++;
+    						cnt++;
     						// printf("%s\n", de->d_name);
     					}
+    				}
+    				if(cnt==0){
+    					perror("There are no such files.");
+    					wildcard = false;
+    					return NULL;
     				}
     				wildcard = false;
     			}
