@@ -2,7 +2,7 @@
 
 > ​	*File components: cpp files, make file (with cmake stuffs), executable file minish*
 >
-> ​	*Developer: Geonwoo Cho (Gwangju Institute of Science & Technology, EECS, 20195171)* 
+> ​	*Developer: Geonwoo Cho* 
 >
 > ​	This document is written as a markdown file. (https://github.com/Cho-Geonwoo/shell_implementation)
 
